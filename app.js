@@ -8,6 +8,10 @@ app.get('/', function(req,res){
 
 });
 
+app.get('/help', function(req, res){
+    res.sendFile(__dirname+'/help.html');
+});
+
 app.listen(3000, function(){
 	console.log("Running! Yay!");
 });
