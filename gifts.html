@@ -73,12 +73,26 @@
 
     <div>
 
-      <form id="checkout" method="post" action="/checkout">
+      <form class="card-form" id="checkout" method="post" action="/checkout">
 
-        <div id="payment-form"></div>
-        <input type="submit" value="Pay $10">
+        <div id="payment-form">
+
+          <div for="credit-card-number">
+              <span class="field-name">CARD NUMBER</span>
+              <input id="credit-card-number" class="card-field"></input>
+          </div>
+
+          <div for="expiration-date">
+              <span class="field-name">EXPIRATION DATE</span>
+              <input id="expiration-date" class="card-field"></input>
+          </div>
+
+        </div>
+        <input type="submit" value="Pay">
 
       </form>
+
+
 
     </div>
     
@@ -95,6 +109,6 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-
+<script src="javascript.js"></script>
 
 </html>
