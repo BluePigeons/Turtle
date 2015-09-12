@@ -1,0 +1,22 @@
+{
+  "name": "turtle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BluePigeons/Turtle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BluePigeons/Turtle/issues"
+  },
+  "homepage": "https://github.com/BluePigeons/Turtle#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
