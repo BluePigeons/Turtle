@@ -8,6 +8,7 @@
   <meta name="description" content="not so awkward Turtl">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,17 +16,43 @@
 </head>
 
 <body>
-  <div id="LOGO"></div>
+  <div id="LOGO">
+    <p>Turtl</p>
+  </div>
 
   <div id="home">
 
     <div id="profile"></div>
 
-    <div id="HELP ME"></div>
-    <div id="HELP FRIEND"></div>
-    <div id="HELP STRANGER"></div>
+    <div id="HELP ME">
+      <p>HELP ME</p>
 
-    <div id="DON'T NEED HELP ANYMORE"></div>
+      <form>
+
+          Optional Message:<br>
+          <input type="text" name="message">
+          <br>
+
+        <input type="submit" value="Submit">
+
+      </form>
+
+    </div>
+
+    <div id="HELP FRIEND">
+      <p>HELP A FRIEND</p>
+
+    </div>
+
+    <div id="HELP STRANGER">
+      <p>HELP A STRANGER</p>
+
+    </div>
+
+    <div id="DON'T NEED HELP ANYMORE">
+      <p>FEELING GREAT</p>
+
+    </div>
 
   </div>
 
@@ -46,9 +73,11 @@
     <div id=""></div>
 
   </div>
-  
-  <div id= "LOGIN"> </div>
-  <div id= "ABOUT"> </div>
-  <div id= "TERMS AND CONDITIONS"> </div>
+
+  <footer>
+    <div id= "LOGOUT"><p>LOGOUT</p> </div>
+    <div id= "ABOUT"> <p>ABOUT</p></div>
+    <div id= "TERMS AND CONDITIONS"> <p>TERMS AND CONDITIONS</p></div>
+  </footer>
 </body>
 </html>
