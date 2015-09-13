@@ -87,21 +87,32 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('/logged', function (req, res) {
-    res.render('logged');
+app.get('/basic', function (req, res) {
+    res.render('basic');
 });
 
-app.get('/payment', function (req, res) {
-    console.log('get payment');
-    res.render('payment');
+app.get('/index', function (req, res) {
+    res.render('index');
 });
 
-app.get('/welcome', function (req, res) {
-    res.render('welcome');
+app.get('/home', function (req, res) {
+    res.render('home');
+});
+
+app.get('/help', function (req, res) {
+    res.render('help');
+});
+
+app.get('/markets', function (req, res) {
+    res.render('markets');
 });
 
 app.get('/braintree', function (req, res){
     res.render('braintree');
+});
+
+app.get('/test1', function (req, res) {
+    res.render('test1');
 });
 
 app.post('/checkout', function (req, res){
