@@ -14,11 +14,11 @@
 </head>
 
 <body>
-  <div id="LOGO">
-    <p href="/home">Turtl</p>
+  <div id="LOGO" class="scroll-top">
+    <p>Turtl</p>
   </div>
 
-  <div id="GIFTS" class="container-fluid">
+  <div id="GIFTS" class="container-fluid page-section" style="background-image:url(http://3.bp.blogspot.com/-ZRZtCx2lk1U/Tb4yP0WOzXI/AAAAAAAAA7w/EakDJnNAGVc/s1600/Tropical-Beach-wallpapers.jpg)">
     
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -32,19 +32,19 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="http://thumbs4.ebaystatic.com/d/l225/m/mzqBWHc_1O8sJoQhp-V4gnQ.jpg" alt="Cuddly_Llama">
+          <img src="http://thumbs4.ebaystatic.com/d/l225/m/mzqBWHc_1O8sJoQhp-V4gnQ.jpg" alt="Cuddly_Llama"><p href="#" data-id="PAYMENT" class="scroll-link">BUY</p>
         </div>
 
         <div class="item">
-          <img src="http://i.dailymail.co.uk/i/pix/2015/04/03/08/273FFDDF00000578-3024207-image-a-44_1428046700273.jpg" alt="Chocolate">
+          <img src="http://i.dailymail.co.uk/i/pix/2015/04/03/08/273FFDDF00000578-3024207-image-a-44_1428046700273.jpg" alt="Chocolate"><p href="#" data-id="PAYMENT" class="scroll-link">BUY</p>
         </div>
 
         <div class="item">
-          <img src="http://rlv.zcache.com/i_tried_to_change_the_world_but_no_source_code_tshirt-rb6004a997db942189b5d3153779e4089_va6lr_324.jpg" alt="SillyTShirt">
+          <img src="http://rlv.zcache.com/i_tried_to_change_the_world_but_no_source_code_tshirt-rb6004a997db942189b5d3153779e4089_va6lr_324.jpg" alt="SillyTShirt"><p href="#" data-id="PAYMENT" class="scroll-link">BUY</p>
         </div>
 
         <div class="item">
-          <img src="http://randommization.com/wp-content/uploads/2013/07/venus-flytrap-potted-plant_2.jpg" alt="Flowers">
+          <img src="http://randommization.com/wp-content/uploads/2013/07/venus-flytrap-potted-plant_2.jpg" alt="Flowers"><p href="#" data-id="PAYMENT" class="scroll-link">BUY</p>
         </div>
       </div>
 
@@ -61,7 +61,7 @@
 
   </div>
 
-  <div id="PAYMENT" class="container-fluid">
+  <div id="PAYMENT" class="container-fluid page-section" style="background-image:url(http://www.emoticonswallpapers.com/wallpaper/beaches/tropical-beach-wallpaper-024.jpg)">
 
     <div>
 
@@ -103,7 +103,43 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+  <script type="text/javascript">
+  // Stolen from http://alijafarian.com/responsive-page-scrolling-with-jquery-and-bootstrap/
+$(document).ready(function() {
+  // navigation click actions 
+  $('.scroll-link').on('click', function(event){
+    event.preventDefault();
+    var sectionID = $(this).attr("data-id");
+    scrollToID('#' + sectionID, 750);
+  });
+  // scroll to top action
+  $('.scroll-top').on('click', function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop:0}, 'slow');     
+  });
+  // mobile nav toggle
+  $('#nav-toggle').on('click', function (event) {
+    event.preventDefault();
+    $('#main-nav').toggleClass("open");
+  });
+});
+// scroll function
+function scrollToID(id, speed){
+  var offSet = 50;
+  var targetOffset = $(id).offset().top - offSet;
+  var mainNav = $('#main-nav');
+  $('html,body').animate({scrollTop:targetOffset}, speed);
+  if (mainNav.hasClass("open")) {
+    mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+    mainNav.removeClass("open");
+  }
+}
+if (typeof console === "undefined") {
+    console = {
+        log: function() { }
+    };
+}
+</script>
 
 </body>
 </html>
