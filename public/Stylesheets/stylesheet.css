@@ -1,7 +1,6 @@
-#LOGO {
-    font-family: 'Russo One', sans-serif;
-    font-size: 101px;
-}
+
+
+
 
 <<<<<<< HEAD
 .formthings {
@@ -325,3 +324,25 @@ nav {
     border-bottom: 10px solid #fff;
 }
 
+#LOGO {
+    font-family: 'Russo One', sans-serif;
+    font-size: 101px;
+}
+
+#state {
+	font-size: 60px;
+}
+
+#profile {
+	font: orange;
+	text-align: center;
+
+}
+
+.alarming {
+	font: white;
+}
+
+.mainbtn {
+	text-align: center;
+}

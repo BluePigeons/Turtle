@@ -16,36 +16,45 @@
   <![endif]-->
 </head>
 
-<body>
-  <div id="LOGO" class="scroll-top">
-    <p>Turtl</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="LOGO">
+      <p href="/home" class=".col-xs-4 .col-sm-3">Turtl</p>
+      </div>
+      <span id= "LOGOUT" class=".col-xs-4 .col-sm-3"><p href="/basic">LOGOUT</p> </span>
+      <span id= "ABOUT" class=".col-xs-4 .col-sm-3"> <p href="/basic#ABOUT">ABOUT</p></span>
+      <span id= "TERMS AND CONDITIONS" class=".col-xs-4 .col-sm-3"> <p href="basic#TandCs">TERMS AND CONDITIONS</p></span>
+    </div>
   </div>
 
   <div id="home" class="page-section" style="background-image:url(http://3.bp.blogspot.com/-ZRZtCx2lk1U/Tb4yP0WOzXI/AAAAAAAAA7w/EakDJnNAGVc/s1600/Tropical-Beach-wallpapers.jpg)">
 
-    <div id="profile"></div>
+    <div id="profile">
    
     <%if (wellbeing == 'ok') { %>
-           <div id="state">ok</div>
-<% }else{ %> <div id="state">nok</div>
+           <div id="state">I'm Feeling Fine</div>
+<% }else{ %> <div id="state" class="alarming">I Need Help</div>
 
 <%} %>
-    <div id="HELP ME">
+
+    </div>
+
+    <div id="HELP ME" class="mainbtn">
       <p href="#" data-id="HELPMEFORM" class="scroll-link">HELP ME</p>
 
     </div>
 
-    <div id="HELP FRIEND">
+    <div id="HELP FRIEND" class="mainbtn">
       <p href="#" data-id="FRIENDS" class="scroll-link">HELP A FRIEND</p>
 
     </div>
 
-    <div id="HELP STRANGER">
+    <div id="HELP STRANGER" class="mainbtn">
       <p href="#" data-id="STRANGERS" class="scroll-link">HELP A STRANGER</p>
 
     </div>
 
-    <div id="DON'T NEED HELP ANYMORE">
+    <div id="DON'T NEED HELP ANYMORE" class="mainbtn">
       <p>FEELING GREAT</p>
 
     </div>
@@ -90,13 +99,7 @@
 
   </div>
 
-  <footer class="container-fluid">
-    <div class="row">
-    <span id= "LOGOUT" class=".col-xs-6 .col-sm-4"><p href="/basic">LOGOUT</p> </span>
-    <span id= "ABOUT" class=".col-xs-6 .col-sm-4"> <p href="/basic#ABOUT">ABOUT</p></span>
-    <span id= "TERMS AND CONDITIONS" class=".col-xs-6 .col-sm-4"> <p href="basic#TandCs">TERMS AND CONDITIONS</p></span>
-    </div>
-  </footer>
+
   <!--Javscript Libraries-->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 

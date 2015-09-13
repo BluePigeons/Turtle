@@ -15,61 +15,17 @@
 
 <body>
 
-<!--Sticky Navbar stuffs-->
-  <nav id="navbar">
 
-    <div id="thenav" class="container-fluid headerstuff">
-      <div class="row">
-            
-        <!--THE LOGO-->
-
-        <div class="logo headerstuff col-md-4 ">
-          <div id="lpbox">
-              <div id="LOGO" class="scroll-top">
-                <p href="/home">Turtl</p>
-              </div>
-          </div>
-        </div>
-
-        <!--THE NON LOGGED IN PAGES-->
-
-        <div id="notthelogin" class="headerstuff col-md-4">
-          <div class="row">
-            <span>            
-              <button onclick="jumpto('aboutpage');" type="button" class="menutitle btn-lg col-md-4 btn btn-info">About</button>
-            </span>
-
-            <span>            
-              <button onclick="jumpto('signup');" type="button" class="menutitle btn-lg col-md-4 btn btn-info">BUY</button>         
-            </span>
-            
-            <span>        
-              <button onclick="jumpto('TCs');" type="button" class="menutitle btn-lg col-md-4 btn btn-info">
-              <p>Terms and</p>
-              <p> Conditions</p>
-              </button>         
-            </span>
-          </div>
-
-        </div>
-
-        <!--THE LOGIN FORM -->
-
-        <div id="login" class="login headerstuff col-md-3" >
-          <form class="navbar-form" >
-
-          <div id="logoutbutton">
-            <button id="logoutbutton"type="submit" class="btn btn-default" >Logout</button>
-            <!--<button id="loginbutton"type="submit" class="btn btn-default" onclick="javascript:location.href='logged.html#users'">Login</button>-->
-          </div>
-
-          </form>
-        </div>            
-            
+  <div class="container-fluid">
+    <div class="row">
+      <div id="LOGO">
+      <p href="/home" class=".col-xs-4 .col-sm-3">Turtl</p>
       </div>
+      <span id= "LOGOUT" class=".col-xs-4 .col-sm-3"><p href="/basic">LOGOUT</p> </span>
+      <span id= "ABOUT" class=".col-xs-4 .col-sm-3"> <p href="/basic#ABOUT">ABOUT</p></span>
+      <span id= "TERMS AND CONDITIONS" class=".col-xs-4 .col-sm-3"> <p href="basic#TandCs">TERMS AND CONDITIONS</p></span>
     </div>
-
-  </nav>
+  </div>
 
 
   <div id="GIFTS" class="container-fluid page-section" style="background-image:url(http://3.bp.blogspot.com/-ZRZtCx2lk1U/Tb4yP0WOzXI/AAAAAAAAA7w/EakDJnNAGVc/s1600/Tropical-Beach-wallpapers.jpg)">
@@ -144,13 +100,7 @@
 
   </div>
 
-<footer class="container-fluid">
-  <div class="row">
-  <span id= "LOGOUT" class=".col-xs-6 .col-sm-4"><a href="/basic">LOGOUT</a></span>
-  <span id= "ABOUT" class=".col-xs-6 .col-sm-4"> <a href="/basic#ABOUT">ABOUT</a></span>
-  <span id= "TERMS AND CONDITIONS" class=".col-xs-6 .col-sm-4"> <a href="/basic#TandCs">TERMS AND CONDITIONS</a></span>
-  </div>
-</footer>
+
 
 <!--Javscript Libraries-->
 
