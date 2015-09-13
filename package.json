@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/BluePigeons/Turtle#readme",
   "dependencies": {
-    "body-parser": "~1.13.3",
+    "body-parser": "^1.13.3",
     "braintree": "^1.29.0",
     "ejs": "~2.3.4",
     "express": "^4.13.3",

@@ -24,7 +24,12 @@
   <div id="home" class="page-section">
 
     <div id="profile"></div>
+   
+    <%if (wellbeing == 'ok') { %>
+           <div id="state">ok</div>
+<% }else{ %> <div id="state">nok</div>
 
+<%} %>
     <div id="HELP ME">
       <p href="#" data-id="HELPMEFORM" class="scroll-link">HELP ME</p>
 

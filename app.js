@@ -96,7 +96,21 @@ app.get('/index', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-    res.render('home');
+	    var thisUser = db.collections.users.findOne({user: req.query.user}, function (err, doc) {
+   	    if(doc){
+   	    	res.render('home', { user: doc, wellbeing: doc.wellbeing });
+   	    }else{
+   	    	var user = new User({user: req.query.user,
+            wellbeing: req.query.wellbeing});
+            user.save(function(err, user) {
+            if (err) return console.error(err);
+            console.dir(user);
+            });
+   	    	res.render('home', {user: 'test', wellbeing: 'ok'});
+   	    }
+
+         
+    	});
 });
 
 app.get('/help', function (req, res) {
