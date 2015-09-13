@@ -1,5 +1,8 @@
 
-
+img {
+ height: inherit; 
+ max-height: 100%;
+}
 
 
 .formthings {
@@ -93,6 +96,7 @@
 
 * {
 	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
 
 }
 
@@ -350,9 +354,14 @@ nav {
 
 .alarming {
 	font: white;
+	background-color: #333333;
+	border-style: dotted;
 }
 
 .mainbtn {
 	text-align: center;
+	font-size: 40;
+	background-color: white;
+	border-radius: 10;
 }
 
