@@ -2,3 +2,12 @@
     font-family: 'Russo One', sans-serif;
     font-size: 101px;
 }
+
+* {
+	background: none;
+}
+
+body {
+	background:"http://fc06.deviantart.net/fs71/i/2010/222/4/2/Calm_Beach_1_by_ThePlace.jpg";
+}
+
