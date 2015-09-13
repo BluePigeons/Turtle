@@ -24,9 +24,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 var bodyParser = require('body-parser');
-var parseUrlEnconded = bodyParser.urlencoded({
-  extended: false
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
 app.get('/sup', function(req,res){
    //res.send("Hello World!"); //respond with string
@@ -113,7 +112,7 @@ app.post('/checkout', function (req, res){
           amount: '10.00',
           paymentMethodNonce: nonce,
     }, function (err, result) {
-      res.render('checkout');
+      res.render('checkout', { result: JSON.stringify(result)});
     });
 });
 
