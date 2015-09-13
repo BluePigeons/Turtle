@@ -70,24 +70,7 @@
 
     <div>
 
-      <form class="card-form" id="checkout" method="post" action="/checkout">
 
-        <div id="payment-form">
-
-          <div for="credit-card-number">
-              <span class="field-name">CARD NUMBER</span>
-              <input id="credit-card-number" class="card-field"></input>
-          </div>
-
-          <div for="expiration-date">
-              <span class="field-name">EXPIRATION DATE</span>
-              <input id="expiration-date" class="card-field"></input>
-          </div>
-
-        </div>
-        <input type="submit" value="Pay">
-
-      </form>
 
 
 
@@ -97,36 +80,16 @@
   </div>
   
 
-<div ng-app="myApp" ng-controller="customersCtrl" class="page" id="paypage">
-  <div class="content">
-        <form id="checkout" method="post" action="/checkout" class="content">
-            <p>Please confirm payment below</p>
+<form action="checkout" method="post">
+    <div id="checkout"></div>
+    <input type="submit" value="PAY"></input>
+</form>
 
-            <!-- img src="javascript:location.href='../public/Stylesheets/images/'+(location)+'jpg'"-->
-
-              <div id="dropin"></div>
-              <input type="submit" value="Pay Now" class="tmp">
-        </form>
-  </div>
-
-  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
-            
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js'></script>
-
-  <script>
-      var app = angular.module('myApp', []);
-      app.controller('customersCtrl', function($scope, $http) {
-          $http.get("/client_token")
-              .then(function (token) {
-              braintree.setup(
-              token.data,'dropin', {
-                  container: 'dropin'
-              });
-          });
-      });
-  </script>
-
-</div>
+<script>
+    braintree.setup("<%= clientToken %>", "dropin", {
+      container: "checkout"
+    });
+</script>
 
 <div id="checkout">
   <p>Thanks for supporting</p>
