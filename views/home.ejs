@@ -17,26 +17,26 @@
 </head>
 
 <body>
-  <div id="LOGO">
+  <div id="LOGO" class="scroll-top">
     <p>Turtl</p>
   </div>
 
-  <div id="home">
+  <div id="home" class="page-section">
 
     <div id="profile"></div>
 
     <div id="HELP ME">
-      <p href="#HELPMEFORM">HELP ME</p>
+      <p href="#" data-id="HELPMEFORM" class="scroll-link">HELP ME</p>
 
     </div>
 
     <div id="HELP FRIEND">
-      <p href="#FRIENDS">HELP A FRIEND</p>
+      <p href="#" data-id="FRIENDS" class="scroll-link">HELP A FRIEND</p>
 
     </div>
 
     <div id="HELP STRANGER">
-      <p href="#STRANGERS">HELP A STRANGER</p>
+      <p href="#" data-id="STRANGERS" class="scroll-link">HELP A STRANGER</p>
 
     </div>
 
@@ -47,7 +47,7 @@
 
   </div>
 
-  <div id="HELPMEFORM">
+  <div id="HELPMEFORM" class="page-section">
 
     <div id="">
       <form>
@@ -63,7 +63,7 @@
 
   </div>
 
-  <div id="FRIENDS">
+  <div id="FRIENDS" class="page-section">
 
     <div id="">
       <a href="/help">
@@ -73,7 +73,7 @@
 
   </div>
 
-  <div id="STRANGERS">
+  <div id="STRANGERS" class="page-section">
 
     <div id="">
       
@@ -97,5 +97,42 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  // Stolen from http://alijafarian.com/responsive-page-scrolling-with-jquery-and-bootstrap/
+$(document).ready(function() {
+  // navigation click actions 
+  $('.scroll-link').on('click', function(event){
+    event.preventDefault();
+    var sectionID = $(this).attr("data-id");
+    scrollToID('#' + sectionID, 750);
+  });
+  // scroll to top action
+  $('.scroll-top').on('click', function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop:0}, 'slow');     
+  });
+  // mobile nav toggle
+  $('#nav-toggle').on('click', function (event) {
+    event.preventDefault();
+    $('#main-nav').toggleClass("open");
+  });
+});
+// scroll function
+function scrollToID(id, speed){
+  var offSet = 50;
+  var targetOffset = $(id).offset().top - offSet;
+  var mainNav = $('#main-nav');
+  $('html,body').animate({scrollTop:targetOffset}, speed);
+  if (mainNav.hasClass("open")) {
+    mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+    mainNav.removeClass("open");
+  }
+}
+if (typeof console === "undefined") {
+    console = {
+        log: function() { }
+    };
+}
+</script>
 </body>
 </html>
