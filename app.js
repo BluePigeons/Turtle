@@ -71,7 +71,7 @@ passport.use('facebook', new FacebookStrategy({
             newUser.access_token = access_token; // we will save the token that facebook provides to the user                    
             newUser.firstName  = profile.name.givenName;
             newUser.lastName = profile.name.familyName;
-            newUser.user = "Sven" 
+            newUser.user = "sven" 
             newUser.wellbeing = "ok" 
 
 
