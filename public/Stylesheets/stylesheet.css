@@ -3,11 +3,326 @@
     font-size: 101px;
 }
 
-* {
-	background: none;
+.formthings {
+	//padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	width: 50%;
+}
+
+#aboutpage {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image: url('images/about.jpg');
+	min-height: 1000px;
+	margin: 0 auto;
+}
+
+#signup {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image:url('images/signingup.jpg');
+	min-height: 1000px;
+	margin: 0 auto;
+}
+
+#TCs {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image:url('images/termsandconds.jpg');
+	height: 1000px;
+	margin: 0 auto;
+}
+
+#users {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image:url('images/users.jpg');
+	min-height: 1000px;
+	margin: 0 auto;
+}
+
+#retailers {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image:url('images/retailers.jpg');
+	min-height: 1000px;
+	margin: 0 auto;
+}
+
+#checkoutpage {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image:url('images/checkoutpage.jpg');
+	background-size: cover;
+	min-height: 1000px;
+	margin: 0 auto;
+}
+
+#paypage {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image:url('images/paypage.jpg');
+	background-size: cover;
+	min-height: 1000px;
+	margin: 0 auto;
+}
+
+.tmp {
+	margin-top: 200px;
+}
+
+.login {
+	position: absolute;
+	//top: 10;
+	height: 100px;
+	//z-index: 1;
+}
+
+
+.menutitle {
+	height: 120px;
 }
 
 body {
-	background:"http://fc06.deviantart.net/fs71/i/2010/222/4/2/Calm_Beach_1_by_ThePlace.jpg";
+
 }
+
+* {
+	font-family: 'Oswald', sans-serif;
+
+}
+
+#logoutbutton {
+	width: 200px;
+}
+
+.menutitle {
+	font-size: 25px;
+}
+
+.formthings {
+	//padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	width: 50%;
+}
+
+.page {
+	//height:100vh;
+	top: 50px;
+}
+
+.abouttext {
+	top: 400px;
+	height: 100vh;
+
+}
+.content {
+	min-height:200px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.about {
+	min-height:200px;
+}
+
+//Header stuffs
+
+.navbar {
+	position: fixed;
+	height: 200px;
+}
+
+nav {
+	background: #2e2e2e
+}
+
+#thetop {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1;
+
+}
+
+.ProductDisplay {
+	height: 50vh;
+}
+
+.carousel {
+	height: 50vh;
+}
+
+// Logo stuff
+
+.logo {
+	position: absolute;
+	height: 200px;
+	left: 375px;
+	//top: 0px;
+		
+}
+
+#lpbox {
+	position: absolute;
+	//bottom: 20px;
+	//z-index: 0;
+	left: 20px;
+}
+
+#logophrase {
+	font-family: 'Indie Flower', cursive;
+	font-size: 5vw;
+	color: white;
+}
+
+
+// The pages
+
+#notthelogin {
+
+}
+
+//login form at the top of the page
+
+#login {
+	top: 0px;
+	right: 5px;
+}
+
+#emailogin {
+	//position: absolute;
+	margin-top: 0px;
+	width: 200px;
+	height: 30px;
+	//right: 50px;
+}
+
+#passwordlogin {
+	//position: absolute;
+	margin-top: 5px;
+	width: 200px;
+	height: 30px;
+	//right: 50px;
+}
+
+#loginbutton {
+	//position: absolute;
+	margin-top: 5px;
+	height: 30px;
+	//right: 50px;
+
+}
+
+
+//the about page stuffs
+
+
+#aboutustitle {
+	z-index: 1;
+	top:300px;
+
+}
+
+
+//Sign Up Form
+
+#signup {
+
+    overflow: scroll;
+    padding: 200px 50px;
+	background-image:url('http://upload.wikimedia.org/wikipedia/commons/d/d3/Turnip_2622027.jpg') 50% 0 no-repeat fixed;
+	background-size: cover;
+	min-height: 1000px;
+	margin: 0 auto;
+}
+
+#signupforms {
+	//padding: 50px;
+}
+
+
+//Terms and Conditions
+
+
+#TCs {
+	//background-image: url("#");
+	//ackground:url('#') 50% 0 no-repeat fixed;
+	//background-size: cover;
+	margin: 0 auto;
+    padding: 200px 50px;
+}
+
+#TCtext {
+	border-radius: 10px;
+	margin-left: 40px;
+	padding: 10px; 
+
+}
+
+
+//CLASSES!!!
+
+.text_head {
+	font-size: 5vw;
+}
+
+.form-group {
+	height: 30px;
+	width: 200px;
+	//z-index: -1;
+}
+
+.smallprint {
+	color: red;
+}
+
+.headerstuff {
+	//min-height:150px;
+	//bottom:0px;
+}
+
+.userprice {
+	font-size: 20px;
+}
+
+.buybutton {
+	height: 50px;
+	width: 100px;
+}
+
+#filters {
+	width:100%;
+	margin: 50px;
+	font-size: 20px;
+}
+
+#pricefilter {
+	margin: auto;
+	width: 40px;
+	font-size: 20px;
+}
+
+#radiusfilter {
+	margin: auto;
+	width: 40px;
+	font-size: 20px;
+}
+
+#signcontent {
+	min-height: 600px;
+}
+
+
+
 
