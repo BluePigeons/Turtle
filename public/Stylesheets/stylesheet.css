@@ -375,3 +375,11 @@ nav {
 #home-mess input{
     color: #333;
 }
+
+#home-strange{
+    background-color: #333;
+    width: 350px;
+    height: 400px;
+    padding: 10px;
+    color: white;
+}
