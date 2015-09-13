@@ -113,8 +113,8 @@ app.get('/home', function (req, res) {
     	});
 });
 
-app.get('/help', function (req, res) {
-    res.render('help');
+app.get('/helping', function (req, res) {
+    res.render('helping');
 });
 
 app.get('/markets', function (req, res) {
