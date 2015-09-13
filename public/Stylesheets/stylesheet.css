@@ -327,6 +327,10 @@ nav {
     border-bottom: 10px solid #fff;
 }
 
+.page-section * {
+    margin-left: 50px;
+}
+
 #LOGO {
     font-family: 'Russo One', sans-serif;
     font-size: 101px;

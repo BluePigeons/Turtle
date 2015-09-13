@@ -1,7 +1,9 @@
 var express = require('express');
 
 var app = express();
-
+var router = express.Router();
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 passport.use('facebook', new FacebookStrategy({
   clientID        : '1683828921836504',
@@ -48,6 +50,20 @@ passport.use('facebook', new FacebookStrategy({
       });
     });
 }));
+
+// route for facebook authentication and login
+// different scopes while logging in
+router.get('/login/facebook', 
+  passport.authenticate('facebook', { scope : 'email' }
+));
+ 
+// handle the callback after facebook has authenticated the user
+router.get('/login/facebook/callback',
+  passport.authenticate('facebook', {
+    successRedirect : '/home',
+    failureRedirect : '/'
+  })
+);
 
 var mongoose = require('mongoose');
 
