@@ -19,7 +19,7 @@ db.once('open', function() {
 });
 
  
-app.get('/', function(req,res){
+app.get('/sup', function(req,res){
    //res.send("Hello World!"); //respond with string
    //res.sendFile(__dirname+'/index.html'); //respond with file
    console.log(req.query.user+" is "+req.query.wellbeing);
@@ -27,22 +27,19 @@ app.get('/', function(req,res){
    console.log(db);
    console.log("=================");
    var thisUser = db.collections.users.findOne({user: req.query.user}, function (err, doc) {
-   	     if(doc){
+   	    if(doc){
    	     	/*
    		doc.wellbeing = req.query.wellbeing;
    		console.log(doc);
    		console.log("=================");
-   		doc.save(function(err, user) {
-    if (err) return console.error(err);
-    console.log("=================");
-    console.dir(user);
-    console.log("=================");
-   });*/
+    doc.save(function(err, user) {
+        if (err) return console.error(err);
+           console.log("=================");
+           console.dir(user);
+           console.log("=================");
+    });*/
 
-User.update({ user : doc.user }, { $set: { wellbeing : req.query.wellbeing }}, function(err, doc){
-
-});
-
+            User.update({ user : doc.user }, { $set: { wellbeing : req.query.wellbeing }}, function(err, doc){});
    }
    else{
    	var user = new User({user: req.query.user,
