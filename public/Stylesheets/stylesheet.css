@@ -337,10 +337,7 @@ nav {
     margin-left: 50px;
 }
 
-#LOGO {
-    font-family: 'Russo One', sans-serif;
-    font-size: 101px;
-}
+
 
 #state {
 	font-size: 60px;
@@ -365,3 +362,7 @@ nav {
 	border-radius: 10;
 }
 
+#LOGO {
+    font-family: 'Russo One', sans-serif;
+    font-size: 101px;
+}
