@@ -92,9 +92,6 @@
 	height: 120px;
 }
 
-body {
-
-}
 
 * {
 	font-family: 'Oswald', sans-serif;
@@ -116,10 +113,7 @@ body {
 	width: 50%;
 }
 
-.page {
-	//height:100vh;
-	top: 50px;
-}
+
 
 .abouttext {
 	top: 400px;
@@ -133,9 +127,7 @@ body {
 	padding: 10px;
 }
 
-.about {
-	min-height:200px;
-}
+
 
 //Header stuffs
 
@@ -326,12 +318,10 @@ nav {
 
 
 
-
-=======
 .page-section {
     width: 100%;
     min-height: 800px;
     padding: 50px 0;
     border-bottom: 10px solid #fff;
 }
->>>>>>> 094b05098f0e608ded2815a7e10bdacce723ab2c
+
