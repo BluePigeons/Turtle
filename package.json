@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/BluePigeons/Turtle#readme",
   "dependencies": {
-    "braintree": "^1.29.0",
-    "express": "^4.13.3",
-    "mongoose": "^4.1.6",
     "body-parser": "~1.13.3",
-    "ejs": "~2.3.4"
+    "braintree": "^1.29.0",
+    "ejs": "~2.3.4",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "mongoose": "^4.1.6",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0"
   }
 }
