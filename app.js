@@ -1,9 +1,29 @@
 var express = require('express');
 
 var app = express();
-var router = express.Router();
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
+
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://sven:octopus@ds053469.mongolab.com:53469/turtl');
+
+    var userSchema = mongoose.Schema({
+    	fb: { id : { type: String, unique: true },
+    	access_token : String,
+    	firstName : String,
+        lastName : String,
+        email : String,
+        wellbeing: String
+    }});
+    var User = mongoose.model('User', userSchema);
+
+var db = mongoose.connection;
+
+db.on('error', console.error);
+db.once('open', function() {
+});
+
 
 passport.use('facebook', new FacebookStrategy({
   clientID        : '1683828921836504',
@@ -14,6 +34,9 @@ passport.use('facebook', new FacebookStrategy({
   // facebook will send back the tokens and profile
   function(access_token, refresh_token, profile, done) {
     // asynchronous
+    console.log('access_token: ' + access_token);
+    console.log('refresh_token: ' + refresh_token);
+    console.log('profile: ' + JSON.stringify(profile));
     process.nextTick(function() {
      
       // find the user in the database based on their facebook id
@@ -36,7 +59,7 @@ passport.use('facebook', new FacebookStrategy({
             newUser.fb.access_token = access_token; // we will save the token that facebook provides to the user                    
             newUser.fb.firstName  = profile.name.givenName;
             newUser.fb.lastName = profile.name.familyName; // look at the passport user profile to see how names are returned
-            newUser.fb.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+            //newUser.fb.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 
             // save our user to the database
             newUser.save(function(err) {
@@ -53,33 +76,18 @@ passport.use('facebook', new FacebookStrategy({
 
 // route for facebook authentication and login
 // different scopes while logging in
-router.get('/login/facebook', 
+app.get('/login/facebook', 
   passport.authenticate('facebook', { scope : 'email' }
 ));
  
 // handle the callback after facebook has authenticated the user
-router.get('/login/facebook/callback',
+app.get('/login/facebook/callback',
   passport.authenticate('facebook', {
     successRedirect : '/home',
     failureRedirect : '/'
   })
 );
 
-var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://sven:octopus@ds053469.mongolab.com:53469/turtl');
-
-    var userSchema = mongoose.Schema({
-        user: { type: String, unique: true },
-        wellbeing: String
-    });
-    var User = mongoose.model('User', userSchema);
-
-var db = mongoose.connection;
-
-db.on('error', console.error);
-db.once('open', function() {
-});
 
  
 app.set('views', __dirname + '/views');
@@ -159,7 +167,7 @@ app.get('/index', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-	    var thisUser = db.collections.users.findOne({user: req.query.user}, function (err, doc) {
+	    var thisUser = db.collections.users.findOne({id : req.query.user}, function (err, doc) {
    	    if(doc){
    	    	res.render('home', { user: doc, wellbeing: doc.wellbeing });
    	    }else{
