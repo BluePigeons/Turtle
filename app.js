@@ -1,21 +1,33 @@
 var express = require('express');
 
-var app = express();
+  
 var passport = require('passport');
+
+var app = express();
+  app.use(passport.initialize());
+  app.use(passport.session());
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 var mongoose = require('mongoose');
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 mongoose.connect('mongodb://sven:octopus@ds053469.mongolab.com:53469/turtl');
 
     var userSchema = mongoose.Schema({
-    	fb: { id : { type: String, unique: true },
+    	id : String,
+    	user : String,
     	access_token : String,
     	firstName : String,
         lastName : String,
-        email : String,
+        //email : String,
         wellbeing: String
-    }});
+    });
     var User = mongoose.model('User', userSchema);
 
 var db = mongoose.connection;
@@ -55,10 +67,15 @@ passport.use('facebook', new FacebookStrategy({
             var newUser = new User();
  
             // set all of the facebook information in our user model
-            newUser.fb.id    = profile.id; // set the users facebook id                 
-            newUser.fb.access_token = access_token; // we will save the token that facebook provides to the user                    
-            newUser.fb.firstName  = profile.name.givenName;
-            newUser.fb.lastName = profile.name.familyName; // look at the passport user profile to see how names are returned
+            newUser.id    = profile.id; // set the users facebook id                 
+            newUser.access_token = access_token; // we will save the token that facebook provides to the user                    
+            newUser.firstName  = profile.name.givenName;
+            newUser.lastName = profile.name.familyName;
+            newUser.user = "Sven" 
+            newUser.wellbeing = "ok" 
+
+
+            // look at the passport user profile to see how names are returned
             //newUser.fb.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 
             // save our user to the database
