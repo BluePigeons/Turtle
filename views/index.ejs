@@ -1,0 +1,11 @@
+<h1>Test</h1>
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+<form action="checkout" method="post">
+    <div id="checkout"></div>
+    <input type="submit" value="PAY"></input>
+</form>
+<script>
+    braintree.setup("<%= clientToken %>", "dropin", {
+      container: "checkout"
+    });
+</script>

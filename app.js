@@ -19,6 +19,15 @@ db.once('open', function() {
 });
 
  
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+var bodyParser = require('body-parser');
+var parseUrlEnconded = bodyParser.urlencoded({
+  extended: false
+});
+
 app.get('/sup', function(req,res){
    //res.send("Hello World!"); //respond with string
    //res.sendFile(__dirname+'/index.html'); //respond with file
@@ -73,7 +82,10 @@ var braintree = require("braintree");
 
 
 app.get('/', function (req, res) {
-    res.render('index');
+    gateway.clientToken.generate({}, function (error, response) {
+      var clientToken = response.clientToken;
+      res.render('index', { clientToken: clientToken });
+    });
 });
 
 app.get('/logged', function (req, res) {
@@ -94,15 +106,15 @@ app.get('/braintree', function (req, res){
 });
 
 app.post('/checkout', function (req, res){
+   console.log(req);
     var nonce = req.body.payment_method_nonce;
     
     gateway.transaction.sale({
           amount: '10.00',
-          paymentMethodNonce: 'nonce-from-the-client',
+          paymentMethodNonce: nonce,
     }, function (err, result) {
-       
+      res.render('checkout');
     });
-    res.render('checkout');
 });
 
 
@@ -129,16 +141,16 @@ app.post('#checkout', function(req, res){
 
 //We add here the Braintree credentials
 var gateway = braintree.connect({
-    environment:  braintree.Environment.Sandbox,
-    merchantId: "7pjxhyv3rr2yzn69",
-    publicKey: "7jk9hk8fhmjhxw47",
-    privateKey: "u7d44457d9a64e2a849660a4d0b0d3be9"
+  environment: braintree.Environment.Sandbox,
+  merchantId: "ffdqc9fyffn7yn2j",
+  publicKey: "qj65nndbnn6qyjkp",
+  privateKey: "a3de3bb7dddf68ed3c33f4eb6d9579ca"
 });
 
 //Send a client token to your client
 app.get("/client_token", function (req, res) {
     gateway.clientToken.generate({}, function (err, response) {
-        
+      if (err) console.log(err);  
       var clientToken = response.clientToken
       res.send(clientToken);
     });
