@@ -362,12 +362,13 @@ nav {
 	border-radius: 10;
 }
 
-<<<<<<< HEAD
+
 #LOGO {
     font-family: 'Russo One', sans-serif;
     font-size: 101px;
-=======
-#home-mess{
+}
+
+#home-mess {
     background-color: #333;
     width: 300px;
     height: 200px;
@@ -384,5 +385,3 @@ nav {
     height: 400px;
     padding: 10px;
     color: white;
->>>>>>> f56c12567a6a5f6206870f79ce21e919cc223ded
-}
