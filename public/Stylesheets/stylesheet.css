@@ -322,8 +322,14 @@ nav {
     padding: 50px 0;
     border-bottom: 10px solid #fff;
 }
-
-.page-section * {
+.one-page-section {
+    background-image:url(http://img00.deviantart.net/ad54/i/2010/222/4/2/calm_beach_1_by_theplace.jpg);
+    width: 100%;
+    min-height: 800px;
+    padding: 50px 0;
+    border-bottom: 10px solid #fff;
+}
+.margined {
     margin-left: 50px;
 }
 
