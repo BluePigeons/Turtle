@@ -25,27 +25,17 @@
     <div id="profile"></div>
 
     <div id="HELP ME">
-      <p href="#">HELP ME</p>
-
-      <form>
-
-          Optional Message:<br>
-          <input type="text" name="message">
-          <br>
-
-        <input type="submit" value="Submit">
-
-      </form>
+      <p href="#HELPMEFORM">HELP ME</p>
 
     </div>
 
     <div id="HELP FRIEND">
-      <p>HELP A FRIEND</p>
+      <p href="#FRIENDS">HELP A FRIEND</p>
 
     </div>
 
     <div id="HELP STRANGER">
-      <p>HELP A STRANGER</p>
+      <p href="#STRANGERS">HELP A STRANGER</p>
 
     </div>
 
@@ -58,26 +48,46 @@
 
   <div id="HELPMEFORM">
 
-    <div id=""></div>
+    <div id="">
+      <form>
+
+          Optional Message:<br>
+          <input type="text" name="message">
+          <br>
+
+        <input type="submit" value="Submit">
+
+      </form>
+    </div>
 
   </div>
 
   <div id="FRIENDS">
 
-    <div id=""></div>
+    <div id="">
+      <a href="/help">
+      <img src="public/Stylesheets/images/sven.jpg"  height="150" border="0">
+      </a>
+    </div>
 
   </div>
 
   <div id="STRANGERS">
 
-    <div id=""></div>
+    <div id="">
+      
+      <a href="/help">
+      <img src="http://place.ppd.io/200/300"   height="150" border="0">
+      </a>      
+
+    </div>
 
   </div>
 
   <footer>
-    <div id= "LOGOUT"><p>LOGOUT</p> </div>
-    <div id= "ABOUT"> <p>ABOUT</p></div>
-    <div id= "TERMS AND CONDITIONS"> <p>TERMS AND CONDITIONS</p></div>
+    <div id= "LOGOUT"><p href="/basic">LOGOUT</p> </div>
+    <div id= "ABOUT"> <p href="/basic#ABOUT">ABOUT</p></div>
+    <div id= "TERMS AND CONDITIONS"> <p href="basic#TandCs">TERMS AND CONDITIONS</p></div>
   </footer>
 </body>
 </html>
